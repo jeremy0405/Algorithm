@@ -1,4 +1,4 @@
-package Baekjoon.num1000;
+package Baekjoon.num11654;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
+        char a = st.nextToken().charAt(0);
         br.close();
 
-        System.out.println(a + b);
+        System.out.println((int) a);
 
     }
+
 }
