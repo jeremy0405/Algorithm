@@ -9,3 +9,11 @@ O
 Baekjoon/num1157/SecondTry.java,9\8\98429518e788f9d441c2aa367d52656a5ff9f088
 J
 Baekjoon/num2908/Main.java,a\3\a369fbf34362b019967a95f96640b8c811990b85
+J
+Baekjoon/num4153/Main.java,8\7\8703ad36f65548d42d7433543086e94a0d01d70f
+K
+Baekjoon/num4153/Main2.java,8\0\803faf8022ebf9ad73fd856950e7589b88131238
+k
+;Programmers/나누어떨어지는숫자배열/Solution.java,5\d\5d9538ac524243d62c55e07322ba9330f6aca1bc
+K
+Baekjoon/num10814/Main.java,5\9\599eed9970c5dbefd6d9056965f91db273869da7
