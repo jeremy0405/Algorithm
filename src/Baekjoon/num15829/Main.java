@@ -3,7 +3,6 @@ package Baekjoon.num15829;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 
 public class Main {
 
@@ -15,11 +14,10 @@ public class Main {
 
 		for (int i = 0; i < total; i++) {
 			int a = (br.read());
-			hash += (a - 'a' + 1);
+			hash += (a - 'a' + 1) * Math.pow(31, i);
 		}
 
-			 int b = 0;
-
+		System.out.println(hash % 1234567891);
 	}
 
 }
