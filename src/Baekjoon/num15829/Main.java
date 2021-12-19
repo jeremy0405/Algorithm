@@ -10,14 +10,24 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int total = Integer.parseInt(br.readLine());
 
-		int hash = 0;
+		double hash = 0;
+		double pow = 1;
+		int aa = 'a' - 1;
 
 		for (int i = 0; i < total; i++) {
-			int a = (br.read());
-			hash += (a - 'a' + 1) * Math.pow(31, i);
-		}
+			if (pow == 1) {
+				hash += (br.read() - aa) * pow;
+				pow *= 31;
+				continue;
+			}
+			hash += (br.read() - aa) * pow;
+			pow = (pow * 31) % 1234567891;
 
-		System.out.println(hash % 1234567891);
+			if (hash > 1234567891) {
+				hash = hash % 1234567891;
+			}
+		}
+		System.out.printf("%.0f", hash);
 	}
 
 }
