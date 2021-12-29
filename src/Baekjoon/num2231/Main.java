@@ -18,9 +18,10 @@ public class Main {
 				System.out.println(i);
 				break;
 			}
+			if(i == input - 1) {
+				System.out.println(0);
+			}
 		}
-
-		//196 1 9 6
 
 	}
 
