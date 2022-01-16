@@ -2,7 +2,7 @@ package leetcode.remove_duplicates_from_sorted_list;
 
 public class ListNode {
 
-	int val;
+	public int val;
 	public ListNode next;
 
 	ListNode() {
