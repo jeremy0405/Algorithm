@@ -1,11 +1,16 @@
 package Programmers.크레인인형뽑기게임;
 
+/*
+	문제    : 크레인 인형뽑기 게임
+	uri    : https://programmers.co.kr/learn/courses/30/lessons/64061
+*/
+
 import java.util.*;
 
 public class Solution {
     public int solution(int[][] board, int[] moves) {
         int answer = 0;
-        List<Integer> baguni = new ArrayList<Integer>();
+        List<Integer> baguni = new ArrayList<>();
 
         // 0 h
         // 1 h
