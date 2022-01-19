@@ -1,5 +1,10 @@
 package Programmers.모의고사;
 
+/*
+	문제    : 모의고사
+	uri    : https://programmers.co.kr/learn/courses/30/lessons/42840
+*/
+
 class Solution {
 
     public int countCorrect(int[] answers, int[] student) {
@@ -78,20 +83,4 @@ class Solution {
         answer = new int[]{5};
         return answer;
     }
-}
-
-class Main {
-
-    public static void main(String[] args) {
-        int[] numbers = {2, 1, 3, 4, 1, 2, 3, 5, 3, 2, 1};
-
-        Solution s = new Solution();
-
-        int[] out = s.solution(numbers);
-
-        for (int i = 0; i < out.length; i++) {
-            System.out.println(out[i]);
-        }
-    }
-
 }
