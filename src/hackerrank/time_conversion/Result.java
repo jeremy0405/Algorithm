@@ -1,4 +1,4 @@
-import static java.util.stream.Collectors.joining;
+package hackerrank.time_conversion;
 
 class Result {
 
