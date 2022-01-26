@@ -28,7 +28,7 @@ class Solution2 {
 							stack.pop();
 							answer += 2;
 						}
-					} else if (stack.size == 0) {
+					} else if (stack.size() == 0) {
 						stack.push(board[j][moves[i]]);
 					}
 					board[j][moves[i]] = 0;
