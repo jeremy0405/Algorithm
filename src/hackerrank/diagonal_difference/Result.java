@@ -1,5 +1,15 @@
 package hackerrank.diagonal_difference;
 
+/*
+	문제    : HackerRank Diagonal Difference
+    유형    :
+	난이도   : Easy
+	시간    :
+	uri    : https://www.hackerrank.com/challenges/diagonal-difference/problem
+    날짜    : 22.01.26(o)
+    refer  :
+*/
+
 import java.util.List;
 
 class Result {

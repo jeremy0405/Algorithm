@@ -1,5 +1,15 @@
 package hackerrank.save_the_prisoner;
 
+/*
+	문제    : HackerRank Save the Prisoner
+    유형    :
+	난이도   : Easy
+	시간    :
+	uri    : https://www.hackerrank.com/challenges/save-the-prisoner/problem
+    날짜    : 22.01.26(o)
+    refer  :
+*/
+
 public class Result {
 
 	public static int saveThePrisoner(int n, int m, int s) {
@@ -10,13 +20,6 @@ public class Result {
 			return n;
 		}
 		return result;
-	}
-
-	public static void main(String[] args) {
-
-		System.out.println(saveThePrisoner(3, 809644536, 3));
-		System.out.println(saveThePrisoner(91, 111224659, 1));
-
 	}
 
 }

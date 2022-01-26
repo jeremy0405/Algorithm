@@ -1,5 +1,15 @@
 package hackerrank.number_line_jumps;
 
+/*
+	문제    : HackerRank Number Line Jumps
+    유형    :
+	난이도   : Easy
+	시간    :
+	uri    : https://www.hackerrank.com/challenges/kangaroo/problem
+    날짜    : 22.01.26(o)
+    refer  :
+*/
+
 public class Result {
 
 	public static String kangaroo(int x1, int v1, int x2, int v2) {

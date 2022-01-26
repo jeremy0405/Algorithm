@@ -1,5 +1,15 @@
 package hackerrank.time_conversion;
 
+/*
+	문제    : HackerRank Time Conversion
+    유형    :
+	난이도   : Easy
+	시간    :
+	uri    : https://www.hackerrank.com/challenges/time-conversion/problem
+    날짜    : 22.01.26(o)
+    refer  :
+*/
+
 class Result {
 
 	public static String timeConversion(String s) {
