@@ -1,14 +1,14 @@
-package Baekjoon.num10845;
-
+package Baekjoon.num10866;
 /*
-	문제    : BOJ 큐
+	문제    : BOJ 덱
     유형    :
 	난이도   : Easy
 	시간    : 5m
-	uri    : https://www.acmicpc.net/problem/10845
-    날짜    : 22.02.01(o)
+	uri    : https://www.acmicpc.net/problem/10866
+    날짜    : 22.02.02(o)
     refer  :
 */
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,14 +31,24 @@ public class Main {
 			st = new StringTokenizer(br.readLine());
 			String command = st.nextToken();
 			switch (command) {
-				case "push":
-					queue.add(Integer.parseInt(st.nextToken()));
+				case "push_front":
+					queue.addFirst(Integer.parseInt(st.nextToken()));
 					break;
-				case "pop":
+				case "push_back":
+					queue.addLast(Integer.parseInt(st.nextToken()));
+					break;
+				case "pop_front":
 					if (queue.isEmpty()) {
 						System.out.println("-1");
 					} else {
-						System.out.println(queue.poll());
+						System.out.println(queue.pollFirst());
+					}
+					break;
+				case "pop_back":
+					if (queue.isEmpty()) {
+						System.out.println("-1");
+					} else {
+						System.out.println(queue.pollLast());
 					}
 					break;
 				case "size":
@@ -73,3 +83,4 @@ public class Main {
 	}
 
 }
+
