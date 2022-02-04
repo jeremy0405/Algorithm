@@ -25,18 +25,14 @@ public class Main {
 		int b = Integer.parseInt(st.nextToken());
 		int c = Integer.parseInt(st.nextToken());
 
-		int tmp = 0;
-		int count = 0;
-		while (tmp < c) {
-			count++;
-			tmp += a;
-			if (tmp >= c) {
-				break;
-			}
-			tmp -= b;
+		int output = (c - b) / (a - b);
+
+		if ((c - b) % (a - b) != 0) {
+			output++;
 		}
 
-		System.out.println(count);
+		System.out.println(output);
+
 	}
 
 }
