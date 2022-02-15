@@ -42,4 +42,33 @@ public class Main {
 
 	}
 
+	/*public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String[] tmp = br.readLine().split(" ");
+
+		int m = Integer.parseInt(tmp[0]);
+		int n = Integer.parseInt(tmp[1]);
+
+		StringBuilder sb = new StringBuilder();
+
+		for (int i = m; i <= n; i++) {
+			if (i == 1) {
+				continue;
+			}
+			boolean isPrime = true;
+			for (int j = 2; j <= Math.sqrt(n); j++) {
+				if (i % j == 0) {
+					isPrime = false;
+					break;
+				}
+			}
+			if (isPrime) {
+				sb.append(i).append('\n');
+			}
+		}
+
+		System.out.println(sb);
+
+	}*/
+
 }
