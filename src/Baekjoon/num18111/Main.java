@@ -4,7 +4,7 @@ package Baekjoon.num18111;
 	문제    : BOJ 마인크래프트
     유형    : 브루트포스
 	난이도   : MEDIUM (S2)
-	시간    : 20m
+	시간    : 40m
 	uri    : https://www.acmicpc.net/problem/18111
     날짜    : 22.02.22(o)
     refer  :
@@ -38,34 +38,34 @@ public class Main {
 			}
 		}
 
-		int time = Integer.MAX_VALUE;
-		int height = 0;
-
-		for (int i = min; i <= max; i++) {
+		int ansS = Integer.MAX_VALUE;
+		int ansH = -1;
+		for (int k = min; k <= max; k++) {
+			int time = 0;
 			int bag = block;
-			int tmpTime = 0;
-			for (int j = 0; j < n; j++) {
-				for (int k = 0; k < m; k++) {
-					if (i - ground[j][k] < 0) {
-						bag += (i - ground[j][k]);
-						tmpTime -= (i - ground[j][k]) * 2;
-					} else {
-						bag += (i - ground[j][k]);
-						tmpTime += (i - ground[j][k]);
-					}
-				}
-			}
-			if (bag >= 0) {
-				if (tmpTime <= time) {
-					time = tmpTime;
-					height = i;
-				}
-			}
 
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < m; j++) {
+					int dif = ground[i][j] - k;
+
+					if (dif > 0) {
+						time += Math.abs(dif) * 2;
+						bag += Math.abs(dif);
+					} else if (dif < 0) {
+						time += Math.abs(dif);
+						bag -= Math.abs(dif);
+					}
+
+				}
+			}
+			if (bag < 0)
+				continue;
+			if (ansS >= time) {
+				ansS = time;
+				ansH = k;
+			}
 		}
 
-		System.out.println(time + " " + height);
-
+		System.out.println(ansS + " " + ansH);
 	}
-
 }
