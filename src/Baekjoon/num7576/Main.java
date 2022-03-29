@@ -2,9 +2,9 @@ package Baekjoon.num7576;
 
 /*
 	문제    : BOJ 토마토
-    유형    :
+    유형    : bfs
 	난이도   : MEDIUM(G1)
-	시간    : 5m
+	시간    : 50m
 	uri    : https://www.acmicpc.net/problem/7576
     날짜    : 22.03.29(o)
     refer  :
@@ -56,57 +56,42 @@ public class Main {
 			return;
 		}
 
-		while (true) {
-			int beforeSize = q.size();
+		while (!q.isEmpty()) {
+			int[] xy = q.poll();
+			int x = xy[0];
+			int y = xy[1];
 
-			while (!q.isEmpty()) {
-				int[] xy = q.poll();
-				int x = xy[0];
-				int y = xy[1];
-
-				if (x != n - 1) {
-					if (box[x + 1][y] != -1) {
-						box[x + 1][y] = 1;
-					}
-				}
-				if (x != 0) {
-					if (box[x - 1][y] != -1) {
-						box[x - 1][y] = 1;
-					}
-				}
-				if (y != m - 1) {
-					if (box[x][y + 1] != -1) {
-						box[x][y + 1] = 1;
-					}
-				}
-				if (y != 0) {
-					if (box[x][y - 1] != -1) {
-						box[x][y - 1] = 1;
-					}
-				}
-
+			if (x != n - 1 && box[x + 1][y] == 0) {
+				box[x + 1][y] = box[x][y] + 1;
+				q.add(new int[]{x + 1, y});
 			}
-
-			time++;
-
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < m; j++) {
-					if (box[i][j] == 1) {
-						q.add(new int[]{i, j});
-					}
-				}
+			if (x != 0 && box[x - 1][y] == 0) {
+				box[x - 1][y] = box[x][y] + 1;
+				q.add(new int[]{x - 1, y});
 			}
-
-			if (q.size() == targetSize) {
-				System.out.println(time);
-				return;
+			if (y != m - 1 && box[x][y + 1] == 0) {
+				box[x][y + 1] = box[x][y] + 1;
+				q.add(new int[]{x, y + 1});
 			}
-
-			if (q.size() == beforeSize) {
-				System.out.println(-1);
-				return;
+			if (y != 0 && box[x][y - 1] == 0) {
+				box[x][y - 1] = box[x][y] + 1;
+				q.add(new int[]{x, y - 1});
 			}
 		}
+
+		int max = 0;
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (box[i][j] == 0) {
+					System.out.println(-1);
+					return;
+				}
+				max = Math.max(max, box[i][j]);
+			}
+		}
+
+		System.out.println(max - 1);
 
 	}
 
