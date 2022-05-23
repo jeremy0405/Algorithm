@@ -2,9 +2,9 @@ package Baekjoon.num2468;
 
 /*
 	문제    : BOJ 안전 영역
-    유형    :
-	난이도   : (S1)
-	시간    : m
+    유형    : dfs
+	난이도   : HARD(S1)
+	시간    : 120m
 	uri    : https://www.acmicpc.net/problem/2468
     날짜    : 22.05.23(o)
     refer  :
@@ -38,14 +38,13 @@ public class Main {
 			}
 		}
 
-		int maxHeight = 0;
+		int maxCount = 0;
 
-		for (int height = 1; height <= max; height++) {
-			maxHeight = Math.max(maxHeight, findCountOfIsland(height));
+		for (int height = 0; height <= max; height++) {
+			int cnt = findCountOfIsland(height);
+			maxCount = Math.max(maxCount, cnt);
 		}
-
-		System.out.println(maxHeight);
-
+		System.out.println(maxCount);
 	}
 
 	private static int findCountOfIsland(int height) {
@@ -54,33 +53,31 @@ public class Main {
 
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
-				if (!visited[i][j]) {
-					answer = Math.max(answer, dfs(i, j, height, answer));
+				if (!visited[i][j] && map[i][j] > height) {
+					answer += dfs(i, j, height);
 				}
 			}
 		}
-
 		return answer;
 	}
 
-	private static int dfs(int i, int j, int height, int answer) {
+	static int dfs(int x, int y, int height) {
 
-		visited[i][j] = true;
+		visited[x][y] = true;
 
-		for (int k = 0; k < 4; k++) {
-			int newI = i + dx[k];
-			int newJ = j + dy[k];
+		for (int i = 0; i < 4; i++) {
+			int nx = x + dx[i];
+			int ny = y + dy[i];
 
-			if (newI < 0 || newJ < 0 || newI >= N || newJ >= N) {
+			if (nx < 0 || ny < 0 || nx >= N || ny >= N) {
 				continue;
 			}
 
-			if (!visited[newI][newJ] && map[newI][newJ] >= height) {
-				dfs(newI, newJ, height, ++answer);
+			if (!visited[nx][ny] && map[nx][ny] > height) {
+				dfs(nx, ny, height);
 			}
 
 		}
-		return answer;
+		return 1;
 	}
-
 }
