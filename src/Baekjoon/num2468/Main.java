@@ -23,7 +23,6 @@ public class Main {
 	static int[] dy = {0, 0, 1, -1};
 	static boolean[][] visited;
 
-
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
