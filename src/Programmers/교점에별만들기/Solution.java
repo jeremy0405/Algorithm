@@ -3,8 +3,8 @@ package Programmers.교점에별만들기;
 /*
 	문제    : 프로그래머스 교점에 별 만들기
     유형    : 구현
-	난이도   : (level 2)
-	시간    : m
+	난이도   : MEDIUM ~ HARD (level 2)
+	시간    : 80m
 	uri    : https://school.programmers.co.kr/learn/courses/30/lessons/87377
     날짜    : 22.08.01(o)
     refer  :
@@ -17,10 +17,10 @@ class Solution {
 
 		List<long[]> list = new ArrayList<>();
 
-		long maxX = -10000000;
-		long minX = 10000000;
-		long maxY = -10000000;
-		long minY = 10000000;
+		long maxX = Long.MIN_VALUE;
+		long minX = Long.MAX_VALUE;
+		long maxY = Long.MIN_VALUE;
+		long minY = Long.MAX_VALUE;
 
 		for(int i = 0; i < line.length; i++) {
 			long a = line[i][0];
