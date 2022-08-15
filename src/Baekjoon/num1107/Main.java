@@ -2,9 +2,9 @@ package Baekjoon.num1107;
 
 /*
 	문제    : BOJ 리모컨
-    유형    :
-	난이도   : (G5)
-	시간    : m
+    유형    : 백트래킹, 완전탐색
+	난이도   : HARD (G5)
+	시간    : 90m
 	uri    : https://www.acmicpc.net/problem/1107
     날짜    : 22.08.15(o)
     refer  :
@@ -30,11 +30,18 @@ public class Main {
 		int n = Integer.parseInt(input);
 		int m = Integer.parseInt(br.readLine());
 
+		if (m == 10) {
+			System.out.println(Math.abs(n - 100));
+			return;
+		}
+
 		boolean[] disableNumbers = new boolean[10];
 
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		for (int i = 0; i < m; i++) {
-			disableNumbers[Integer.parseInt(st.nextToken())] = true;
+		if (m != 0) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			for (int i = 0; i < m; i++) {
+				disableNumbers[Integer.parseInt(st.nextToken())] = true;
+			}
 		}
 
 		numbersIdx = 10 - m;
