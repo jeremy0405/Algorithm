@@ -28,8 +28,8 @@ class Solution {
 			while (conA < name.length() - 1 && name.charAt(conA) == 'A') {
 				conA++;
 			}
-			cursor = Math.min(cursor,
-				i + (name.length() - conA) + Math.min(i, name.length() - conA));
+			cursor = Math.min(cursor, i * 2 + (name.length() - conA));
+			cursor = Math.min(cursor, i + (name.length() - conA) * 2);
 		}
 
 		return answer + cursor;
